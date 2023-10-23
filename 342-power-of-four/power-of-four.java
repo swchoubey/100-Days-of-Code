@@ -8,6 +8,7 @@ class Solution {
         double x=Math.log(n)/Math.log(4);
 
         return (x==(int)x);*/
+        //New approach ctto
         return((n>0) && ((n&(n-1))==0) && (n%3==1));
     }
 }
