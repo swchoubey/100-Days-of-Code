@@ -1,3 +1,4 @@
+/*Problem Statement: In order to increase their computing efficiency, a cloud services platform added n new processors, where the th processor provides them a compute of power[i]. However, not all processors can be used to execute a process. If a processor with computing power of power[i] is used, then all processors that have (power[i] + 1) or (power[i] - 1) cannot be used for execution. A processor can only be used once. Find the maximum possible sum of computing powers of chosen processors.*/
 import java.util.Arrays;
 
 public class CloudServicePlatform {
