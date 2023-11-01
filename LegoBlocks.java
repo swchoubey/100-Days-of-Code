@@ -1,3 +1,11 @@
+/*Problem Statement: To make learning more interactive and fun for students, 
+a math teacher decides to teach a concept to students by using Lego blocks. 
+There are 2 rows of legos, rowA (of length and row (of length m). Both rows hold 
+legos with positive integer values printed on them. However, some values (possibly none) are missing. 
+The missing values are denoted by 0. Students need to incorporate the missing values. 
+The task is to replace each 0 with a positive integer such that the sums of both arrays are equal. 
+Return the minimum sum possible if it is not possible to make the sums equal return-1.*/
+
 import java.util.Arrays;
 
 public class LegoBlocks {
