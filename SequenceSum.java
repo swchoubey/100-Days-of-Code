@@ -1,3 +1,8 @@
+/*Problem Statement: Given three integers, i, j, and k, a sequence sum to be the value of 
+i + (i + 1) + (i + 2) + (i + 3) + ... +j + (j - 1) + (j - 2) + (j - 3) + ... +k
+(increment from i until it equals j, then decrement from j until it equals k). 
+Given values i, j, and k, calculate the sequence sum as described.*/
+
 import java.util.*;
 public class SequenceSum {
     public static long getSequenceSum(int i, int j, int k){
