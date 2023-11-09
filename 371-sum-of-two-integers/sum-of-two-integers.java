@@ -1,7 +1,8 @@
 class Solution {
     public int getSum(int a, int b) {
+        int carry = 0;
         while(b!=0){
-            int carry = a&b;
+            carry = a&b;
             a=a^b;
             b=carry<<1;
         }
