@@ -1,22 +1,22 @@
 class Solution {
     public int maxScore(String s) {
-        int maxScore=0;
-        for(int i=1;i<s.length();i++){
-            String left = s.substring(0,i);
-            String right = s.substring(i, s.length());
-            int score=0;
-            for(char c : left.toCharArray()){
-                if(c=='0'){
-                    ++score;
-                }
+        int ones=0;
+        int zScore=s.charAt(0)=='0'?1:0;
+        int score=zScore;
+        for(int i=1;i<s.length()-1;i++){
+            if(s.charAt(i)=='0'){
+                zScore++;
             }
-            for(char c: right.toCharArray()){
-                if(c=='1'){
-                    ++score;
-                }
+            else{
+                ones++;
+                zScore-=1;
             }
-            maxScore=Math.max(maxScore, score);
+            if(zScore>score){
+                score=zScore;
+            }
         }
-        return maxScore;
+        ones+=(s.charAt(s.length()-1)=='1'?1:0);
+
+        return ones+score;
     }
 }
