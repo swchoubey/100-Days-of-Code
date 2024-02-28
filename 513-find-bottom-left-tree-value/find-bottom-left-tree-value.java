@@ -21,7 +21,7 @@ class Solution {
 
         while(!q.isEmpty()){
             int count = q.size();
-            for(int i = 0; i < count; ++i){
+            for(int i = 0; i < count; i++){
                 TreeNode curr = q.poll();
                 if(i==0){
                     last = curr.val;
