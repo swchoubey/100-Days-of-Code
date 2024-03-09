@@ -1,13 +1,13 @@
 class Solution {
     public int getCommon(int[] nums1, int[] nums2) {
-        Arrays.sort(nums2);
-        Set<Integer> set = new HashSet<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for(int n : nums1){
-            set.add(n);
+            map.put(n, map.getOrDefault(n, 0) + 1);
         }
         for(int n : nums2){
-            if(set.contains(n))
+            if(map.containsKey(n) && map.get(n) > 0){
                 return n;
+            }
         }
         return -1;
     }
