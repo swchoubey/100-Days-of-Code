@@ -9,20 +9,25 @@
  * }
  */
 class Solution {
-    int carry = 0;
-    public void helper(ListNode head){
-        if(head == null)
-            return;
-        helper(head.next);
-        int curr = 2 * head.val + carry;
-        carry = curr/10;
-
-        head.val = curr % 10;
-    }
     public ListNode doubleIt(ListNode head) {
-        carry = 0;
-        helper(head);
+        Stack<Integer> st = new Stack<>();
+        while(head != null){
+            st.push(head.val);
+            head = head.next;
+        }
 
-        return (carry == 0)? head : new ListNode(carry, head);
+        ListNode tail = null;
+        int res = 0;
+
+        while(!st.isEmpty() || res != 0){
+            tail = new ListNode(0, tail);
+            if(!st.isEmpty()){
+                res  = res + st.pop() * 2;
+            }
+            tail.val = res % 10;
+            res /= 10;
+        }
+
+        return tail;
     }
 }
