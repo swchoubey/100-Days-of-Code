@@ -1,11 +1,17 @@
 class Solution {
     public int specialArray(int[] nums) {
-        Arrays.sort(nums);
         int n = nums.length;
-        if(nums[0] >= n)
-            return n;
-        for(int i = 1; i <= n; i++){
-            if(nums[n-i] >= i && (n - i - 1 < 0 || nums[n - i - 1] < i))
+        int[] freq = new int[n + 1];
+
+        for(int i = 0; i < n; i++){
+            freq[Math.min(n, nums[i])]++;
+        }
+
+        int x = 0;
+
+        for(int i = n; i >= 1; i--){
+            x += freq[i];
+            if(i == x)
                 return i;
         }
 
